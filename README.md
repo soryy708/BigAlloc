@@ -13,8 +13,8 @@ Strategy: Allocate smaller chunks, encapsulate the house keeping, expose a conve
     
     int main()
     {
-    	const size_t size = 1024 * 1024 * 1024; // something large, you get the point
-
+        const size_t size = 1024 * 1024 * 1024; // something large, you get the point
+        
         // Allocation:
         BigAlloc<>::Handle big_block = BigAlloc<>::malloc(size);
         
@@ -22,15 +22,15 @@ Strategy: Allocate smaller chunks, encapsulate the house keeping, expose a conve
         {
             // Writing to memory:
             *big_block[128] = 32;
-
+            
             // Reading from memory:
             std::cout << *big_block[128];
-
+            
             // Deallocation:
             BigAlloc<>::free(big_block);
         }
-
-    	return 0;
+        
+        return 0;
     }
 
 ## License
